@@ -1,0 +1,19 @@
+<div class="page">
+  <div class="card">
+    <h1>Todo App</h1>
+
+    <div class="input-row">
+      <input [(ngModel)]="newTodo" placeholder="Add a new task" (keyup.enter)="addTodo()" />
+      <button (click)="addTodo()">Add</button>
+    </div>
+
+    <ul>
+      <li *ngFor="let todo of todos">
+        <span (click)="toggleTodo(todo)" [class.done]="todo.completed">
+          {{ todo.title }}
+        </span>
+        <button class="delete" (click)="removeTodo(todo.id)">✕</button>
+      </li>
+    </ul>
+  </div>
+</div>
